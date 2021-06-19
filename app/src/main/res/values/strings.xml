@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OpenWeather</string>
+    <string name="app_id">dbdd559ece9681a33845d41709506210</string>
+    <string name="path">http://api.openweathermap.org/data/2.5/weather?q=%s&amp;appid=%s</string>
+</resources>

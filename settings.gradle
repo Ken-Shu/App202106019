@@ -1,0 +1,6 @@
+include ':app_transservice'
+include ':app'
+rootProject.name = "App20210605"
+include ':retrofit'
+include ':app_retrofit_animal'
+include ':app_retrofit_crud'

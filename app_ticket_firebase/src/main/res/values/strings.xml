@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">App_Ticket_Firebase</string>
+
+    <!-- activity_main -->
+    <string name="activity_main_title_text">雲端購票 - %s</string>
+    <string name="oneway_price_txt">單程票價 : </string>
+    <string name="default_1000">1000</string>
+    <string name="round_trip_discount_txt">來回折扣 : </string>
+    <string name="default_7">7.0</string>
+    <string name="total_amount_txt">剩餘張數 : </string>
+    <string name="default_10">10</string>
+    <string name="buy_amount_txt">購買張數 : </string>
+    <string name="round_trip_amount_txt">來回組數 : </string>
+    <string name="clear_txt">清除</string>
+    <string name="record_txt">紀錄</string>
+    <string name="buy_txt">購買</string>
+    <string name="submit_info_txt">結帳資訊</string>
+    <string name="submit_detail_txt">總張數:%d\n來回票:%d\n單程票:%d\n總金額:$%d\n</string>
+    <string name="warning_txt">購買成功 !</string>
+
+    <!-- activity_login -->
+    <string name="activity_login_title_text">雲端購票 - 登入</string>
+    <string name="username_hint_txt">請輸入帳號</string>
+    <string name="order_login_txt">訂票登入</string>
+    <string name="console_login_txt">後臺登入</string>
+
+    <!-- activity_orderList -->
+    <string name="activity_order_list_title_text">雲端購票紀錄 - %s</string>
+    <string name="all_order_text">所有訂單紀錄</string>
+    <string name="total_text">金額</string>
+</resources>

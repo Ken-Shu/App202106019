@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_discount">discount</string>
+    <string name="fb_update">update</string>
+    <string name="fb_price">price</string>
+    <string name="fb_totalamount">totalamount</string>
+
+
+</resources>

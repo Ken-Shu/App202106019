@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsoleActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 票務資訊設定 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Discount 設定-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/discount_text"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/et_discount"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:onClick="update"
+                    android:tag="@string/fb_discount"
+                    android:text="@string/update_text"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <!-- price 設定-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/price_text"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/et_price"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:onClick="update"
+                    android:tag="@string/fb_price"
+                    android:text="@string/update_text"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <!-- amount 設定-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_totalamount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textIsSelectable="true"
+                    android:padding="10dp"
+                    android:text="@string/totalamount_text"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/et_totalamount"
+                    android:text="0"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:onClick="update"
+                    android:tag="@string/fb_totalamount"
+                    android:text="@string/update_text"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 票務統計 -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/stat_text"
+        android:layout_margin="10dp"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_stat"
+        android:text="..."
+        android:layout_margin="10dp"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+        <!-- 票務統計圖 -->
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</ScrollView>

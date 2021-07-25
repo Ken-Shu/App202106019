@@ -1,6 +1,7 @@
 package com.ken_shu.app_ticket_firebase
 
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +44,9 @@ class OrderListActivity : AppCompatActivity() , RecyclerViewAdapter.OrderOnItemC
         context = this
         //設定 app title
         title = resources.getString(R.string.activity_order_list_title_text)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //取得使用者名稱 (上一頁傳來的USER NAME)
         userName = intent.getStringExtra("userName").toString()
         //判斷是否有 userName 的資料 設定 app title
@@ -112,8 +116,9 @@ class OrderListActivity : AppCompatActivity() , RecyclerViewAdapter.OrderOnItemC
             adapter = recyclerViewAdapter
         }
     }
-    //按一下產生QR-code
-    override fun onItemClickListener(order: Order) {
+
+    //產生QR-Code
+    private fun getQRCode(order: Order){
         //產生 Json 透過Gson 將 order 的物件 轉成 Json字串
         val orderJsonString = Gson().toJson(order).toString()
         Toast.makeText(context,"click:"+order.toString(),Toast.LENGTH_SHORT).show()
@@ -143,6 +148,52 @@ class OrderListActivity : AppCompatActivity() , RecyclerViewAdapter.OrderOnItemC
             .setView(qrcodeImageView)
             .create()
             .show()
+    }
+
+    //使用票卷
+    private fun useTickest(order: Order){
+
+            val result_txt = Gson().toJson(order,Order::class.java) //解碼內容
+            AlertDialog.Builder(context)
+                .setTitle("QRCode內容")
+                .setMessage("${result_txt}")
+                .setPositiveButton("使用",{
+                        dialogInterface , i ->
+                    //取的該票路徑
+                    val path = order.Ticket.userName+ "/" + order.key
+                    val transPath = "transaction/" + path
+                    //刪除該票
+                    myRef.child(transPath).removeValue()
+                    //建立 transaction_history
+                    val ts = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date()).toString()
+                    myRef.child("transaction_history/${path}/ts").setValue(ts)
+                    myRef.child("transaction_history/${path}/key").setValue(order.key)
+                    myRef.child("transaction_history/${path}/userName").setValue(order.Ticket.userName)
+                    myRef.child("transaction_history/${path}/allTickets").setValue(order.Ticket.allTickets)
+                    myRef.child("transaction_history/${path}/oneWay").setValue(order.Ticket.oneWay)
+                    myRef.child("transaction_history/${path}/roundTrip").setValue(order.Ticket.roundTrip)
+                    myRef.child("transaction_history/${path}/total").setValue(order.Ticket.total)
+                    myRef.child("transaction_history/${path}/json").setValue(result_txt)
+                    //結束
+                    finish()
+                })
+                .setNegativeButton("取消" , DialogInterface.OnClickListener{
+                        dialogInterface , i -> finish()
+                })
+                .create()
+                .show()
+
+    }
+
+
+    //按一下產生QR-code 或 使用票卷(後臺專用)
+    override fun onItemClickListener(order: Order) {
+      //沒有 userName -> 後臺專用
+        if (userName == null || userName.equals("") || userName.equals("null")){
+            useTickest(order)
+        }else {
+            getQRCode(order)
+        }
     }
     //長按一下可以取消訂單(退票)
     override fun onItemLongClickListener(order: Order) {

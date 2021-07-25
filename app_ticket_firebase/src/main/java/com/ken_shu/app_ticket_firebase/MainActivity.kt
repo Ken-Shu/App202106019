@@ -14,7 +14,6 @@ import com.google.firebase.ktx.Firebase
 import com.ken_shu.app_ticket_firebase.models.TicketsStock
 import com.ken_shu.app_ticket_firebase.services.TicketServices
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.order.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
@@ -22,6 +21,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     val database = Firebase.database
     val myRef = database.getReference("ticketsStock")
+
 
     lateinit var ticketsStock: TicketsStock
     lateinit var context: Context
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         //Get userName
         userName = intent.getStringExtra("userName").toString()
+
         //把userName 丟進去 title 的 %s 裡面
         title = String.format(title.toString(), userName)
 
@@ -88,15 +89,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     //清除按鈕
-    private fun clear(view: View?) {
-        //清除結帳內容
-        var result =
-            resources.getString(R.string.submit_detail_txt)// 總張數:%d\n來回票:%d\n單程票:%d\n總金額:$%d\n
-        tv_result.text = String.format(result, 0, 0, 0, 0)
-        //清除購買張數 跟 來回組數
-        et_all_tickets.setText("0") //購買張數 清除
-        et_round_trip.setText("0") //來回組數 清除
-        tv_warning.text = "" //警告訊息 清除
+    fun clear(view: View?) {
+            //清除結帳內容
+            var result =
+                resources.getString(R.string.submit_detail_txt)// 總張數:%d\n來回票:%d\n單程票:%d\n總金額:$%d\n
+            tv_result.text = String.format(result, 0, 0, 0, 0)
+            //清除購買張數 跟 來回組數
+            et_all_tickets.setText("0") //購買張數 清除
+            et_round_trip.setText("0") //來回組數 清除
+            tv_warning.text = "" //警告訊息 清除
     }
 
     //購票流程(按下購買鈕)

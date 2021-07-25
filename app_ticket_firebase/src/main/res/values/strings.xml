@@ -15,7 +15,7 @@
     <string name="record_txt">紀錄</string>
     <string name="buy_txt">購買</string>
     <string name="submit_info_txt">結帳資訊</string>
-    <string name="submit_detail_txt">總張數:%d\n來回票:%d\n單程票:%d\n總金額:$%d\n</string>
+    <string name="submit_detail_txt">總張數:%d\n單程票:%d\n來回票:%d\n總金額:$%d\n</string>
     <string name="warning_txt">購買成功 !</string>
 
     <!-- activity_login -->
@@ -28,4 +28,13 @@
     <string name="activity_order_list_title_text">雲端購票紀錄 - %s</string>
     <string name="all_order_text">所有訂單紀錄</string>
     <string name="total_text">金額</string>
+
+    <!-- activity_console -->
+    <string name="activity_console_title_text">雲端後台 - %s</string>
+    <string name="discount_text">Discount</string>
+    <string name="update_text">Update</string>
+    <string name="price_text">Price</string>
+    <string name="totalamount_text">TotalAmount</string>
+    <string name="updateOK_text">%s 修改成功</string>
+    <string name="stat_text">銷售統計</string>
 </resources>

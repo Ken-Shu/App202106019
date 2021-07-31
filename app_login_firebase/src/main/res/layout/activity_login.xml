@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:text="Login"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:hint="Email"
+        android:textSize="30dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="Password"
+        android:textSize="30dp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/cb_memory"
+        android:text="memory"
+        android:layout_below="@+id/et_password"
+        android:layout_toRightOf="@+id/bt_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:onClick="signUp"
+        android:clickable="true"
+        android:id="@+id/tv_signup"
+        android:textColor="#00f"
+        android:text="SignUp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/et_password"
+        android:layout_toRightOf="@+id/cb_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:onClick="forgot"
+        android:clickable="true"
+        android:id="@+id/tv_forgot"
+        android:textColor="#00f"
+        android:text="Forgot"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:textAllCaps="false"
+        android:layout_below="@+id/et_password"
+        android:layout_toRightOf="@+id/tv_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="signIn"
+        android:id="@+id/bt_signin"
+        android:textSize="20dp"
+        android:text="SignIn"
+        android:textAllCaps="false"
+        android:layout_below="@+id/et_password"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

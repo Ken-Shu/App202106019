@@ -25,7 +25,7 @@ class SignUpActivity : AppCompatActivity() {
 
     fun signUp(view : View){
         val email = et_signup_email.text.toString()
-        val password = et_password.text.toString()
+        val password = et_signup_password.text.toString()
         var message : String? = ""
         auth.createUserWithEmailAndPassword(email , password)
             .addOnCompleteListener(this){

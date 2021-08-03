@@ -47,18 +47,18 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:onClick="signUp"
-        android:clickable="true"
         android:id="@+id/tv_signup"
-        android:textColor="#00f"
-        android:text="SignUp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:textAllCaps="false"
-        android:layout_below="@+id/et_password"
-        android:layout_toRightOf="@+id/cb_memory"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_password"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/cb_memory"
+        android:clickable="true"
+        android:onClick="signUp"
+        android:text="SignUp"
+        android:textAllCaps="false"
+        android:textColor="#00f" />
 
     <TextView
         android:onClick="forgot"
